@@ -8,6 +8,6 @@
 import SwiftUI
 
 struct Constants {
-    static let maxTimeGiven: TimerInterval = 1500
+    static let maxTimeGiven: TimeInterval = 1500
     static let buttonColor: Color = Color.blue
 }
