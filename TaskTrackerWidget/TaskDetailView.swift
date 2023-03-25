@@ -9,7 +9,10 @@ import SwiftUI
 import AVFoundation
 
 struct TaskDetailView: View {
+    @Environment(\.colorScheme) var colorScheme
+
     var task: Task
+    
     @Binding var showDetail: Bool
     @State private var timer: Timer? = nil
     @State private var remainingTime: TimeInterval
