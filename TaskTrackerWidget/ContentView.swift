@@ -8,15 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var currentDate: Date = Date()
+    @State private var tasks: [Task] = sampleTasks
+    @State private var selectedTask: Task? = nil
+    @State private var showDetail: Bool = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            if !showDetail {
+                VStack {
+                    DateNavigation(currentDate: $currentDate)
+                    
+                    TaskList(tasks: tasks, selectedTask: $selectedTask, showDetail: $showDetail)
+                        .padding(.top)
+                }
+                .padding()
+                .onAppear {
+                    currentDate = Date()
+                }
+                
+            } else {
+                TaskDetailView(task: selectedTask!, showDetail: $showDetail)
+            }
         }
-        .padding()
     }
+    
+    
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -24,3 +43,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+

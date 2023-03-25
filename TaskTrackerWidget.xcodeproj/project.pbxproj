@@ -14,6 +14,12 @@
 		178C1EC629CF0D2E00C4E37D /* TaskTrackerWidgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C1EC529CF0D2E00C4E37D /* TaskTrackerWidgetTests.swift */; };
 		178C1ED029CF0D2E00C4E37D /* TaskTrackerWidgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C1ECF29CF0D2E00C4E37D /* TaskTrackerWidgetUITests.swift */; };
 		178C1ED229CF0D2E00C4E37D /* TaskTrackerWidgetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C1ED129CF0D2E00C4E37D /* TaskTrackerWidgetUITestsLaunchTests.swift */; };
+		178C1EDF29CF1BB800C4E37D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C1EDE29CF1BB800C4E37D /* Task.swift */; };
+		178C1EE129CF222000C4E37D /* DateNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C1EE029CF222000C4E37D /* DateNavigation.swift */; };
+		178C1EE329CF229300C4E37D /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C1EE229CF229300C4E37D /* TaskRow.swift */; };
+		178C1EE529CF22EA00C4E37D /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C1EE429CF22EA00C4E37D /* TaskList.swift */; };
+		178C1EE729CF244000C4E37D /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C1EE629CF244000C4E37D /* TaskDetailView.swift */; };
+		178C1EE929CF362C00C4E37D /* TaskProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C1EE829CF362C00C4E37D /* TaskProgress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		178C1ECB29CF0D2E00C4E37D /* TaskTrackerWidgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskTrackerWidgetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		178C1ECF29CF0D2E00C4E37D /* TaskTrackerWidgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTrackerWidgetUITests.swift; sourceTree = "<group>"; };
 		178C1ED129CF0D2E00C4E37D /* TaskTrackerWidgetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTrackerWidgetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		178C1EDE29CF1BB800C4E37D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		178C1EE029CF222000C4E37D /* DateNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNavigation.swift; sourceTree = "<group>"; };
+		178C1EE229CF229300C4E37D /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
+		178C1EE429CF22EA00C4E37D /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
+		178C1EE629CF244000C4E37D /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
+		178C1EE829CF362C00C4E37D /* TaskProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +109,12 @@
 			children = (
 				178C1EB329CF0D2C00C4E37D /* TaskTrackerWidgetApp.swift */,
 				178C1EB529CF0D2C00C4E37D /* ContentView.swift */,
+				178C1EE029CF222000C4E37D /* DateNavigation.swift */,
+				178C1EE429CF22EA00C4E37D /* TaskList.swift */,
+				178C1EE229CF229300C4E37D /* TaskRow.swift */,
+				178C1EE629CF244000C4E37D /* TaskDetailView.swift */,
+				178C1EDE29CF1BB800C4E37D /* Task.swift */,
+				178C1EE829CF362C00C4E37D /* TaskProgress.swift */,
 				178C1EB729CF0D2E00C4E37D /* Assets.xcassets */,
 				178C1EBC29CF0D2E00C4E37D /* TaskTrackerWidget.entitlements */,
 				178C1EB929CF0D2E00C4E37D /* Preview Content */,
@@ -259,7 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178C1EE729CF244000C4E37D /* TaskDetailView.swift in Sources */,
+				178C1EE529CF22EA00C4E37D /* TaskList.swift in Sources */,
+				178C1EE329CF229300C4E37D /* TaskRow.swift in Sources */,
 				178C1EB629CF0D2C00C4E37D /* ContentView.swift in Sources */,
+				178C1EE129CF222000C4E37D /* DateNavigation.swift in Sources */,
+				178C1EE929CF362C00C4E37D /* TaskProgress.swift in Sources */,
+				178C1EDF29CF1BB800C4E37D /* Task.swift in Sources */,
 				178C1EB429CF0D2C00C4E37D /* TaskTrackerWidgetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
