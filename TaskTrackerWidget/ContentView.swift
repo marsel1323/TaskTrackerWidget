@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var currentDate: Date = Date()
-    @State private var tasks: [Task] = sampleTasks
     @State private var selectedTask: Task? = nil
     @State private var showDetail: Bool = false
+    @ObservedObject var taskViewModel = TaskViewModel()
+    @State private var showNewTaskView = false
 
     var body: some View {
         ZStack {
@@ -19,16 +20,29 @@ struct ContentView: View {
                 VStack {
                     DateNavigation(currentDate: $currentDate)
                     
-                    TaskList(tasks: tasks, selectedTask: $selectedTask, showDetail: $showDetail, currentDate: $currentDate)
+                    TaskList(tasks: taskViewModel.tasks, selectedTask: $selectedTask, showDetail: $showDetail, currentDate: $currentDate)
                         .padding(.top)
+                    
                 }
                 .padding()
                 .onAppear {
                     currentDate = Date()
                 }
+                .toolbar {
+                    Button(action: {
+                        showNewTaskView.toggle()
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                }
+                .sheet(isPresented: $showNewTaskView) {
+                    NewTaskView()
+                        .environmentObject(taskViewModel)
+                }
                 
             } else {
                 TaskDetailView(task: selectedTask!, showDetail: $showDetail)
+                    .environmentObject(taskViewModel)
             }
         }
     }

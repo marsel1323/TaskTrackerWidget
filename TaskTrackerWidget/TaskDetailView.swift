@@ -9,14 +9,14 @@ import SwiftUI
 import AVFoundation
 
 struct TaskDetailView: View {
-    @Environment(\.colorScheme) var colorScheme
-
     var task: Task
     
     @Binding var showDetail: Bool
     @State private var timer: Timer? = nil
     @State private var remainingTime: TimeInterval
     @State private var isRunning: Bool = false
+    
+    @EnvironmentObject var taskViewModel: TaskViewModel
     
     init(task: Task, showDetail: Binding<Bool>) {
         self.task = task
@@ -37,7 +37,7 @@ struct TaskDetailView: View {
             
             RemainingTimeText(remainingTime: $remainingTime)
             
-            TimerControlButton(isRunning: $isRunning, remainingTime: $remainingTime)
+            TimerControlButton(task:task, taskViewModel: taskViewModel, isRunning: $isRunning, remainingTime: $remainingTime)
                 .padding(.top, 30)
             
             Spacer()
@@ -74,15 +74,16 @@ struct BackButton: View {
             HStack {
                 Image(systemName: "chevron.left")
                     .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(.white)
+                    .foregroundColor(Color.primary)
 
                 Text("Back")
                     .font(.system(size: 18, weight: .semibold))
-                    .foregroundColor(.white)
+                    .foregroundColor(Color.primary)
             }
+            .padding()
+            .background(Capsule().fill(Constants.buttonColor))
         }
-        .padding()
-        .background(Capsule().fill(Constants.buttonColor))
+        .contentShape(Rectangle())
         .buttonStyle(PlainButtonStyle())
         .padding(.leading)
         .padding(.top)
@@ -119,6 +120,9 @@ struct RemainingTimeText: View {
 }
 
 struct TimerControlButton: View {
+    let task: Task
+    var taskViewModel: TaskViewModel
+
     @Binding var isRunning: Bool
     @Binding var remainingTime: TimeInterval
     @State private var timer: Timer? = nil
@@ -130,7 +134,7 @@ struct TimerControlButton: View {
                 .font(.title)
                 .padding()
                 .background(Capsule().fill(Constants.buttonColor))
-                .foregroundColor(.white)
+                .foregroundColor(Color.primary)
         }
         .buttonStyle(PlainButtonStyle())
     }
@@ -149,6 +153,8 @@ struct TimerControlButton: View {
     func toggleTimer() {
         if isRunning {
             timer?.invalidate()
+            saveElapsedTime()
+            remainingTime = task.timeGiven < 1500 ? task.timeGiven : 1500
         } else {
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
                 if remainingTime > 0 {
@@ -163,6 +169,12 @@ struct TimerControlButton: View {
             //self.timer = timer
         }
         isRunning.toggle()
+    }
+    
+    func saveElapsedTime() {
+        let elapsedTime = task.timeGiven - remainingTime
+        let taskMeasurement = TaskMeasurement(taskID: task.id, date: Date(), elapsedTime: elapsedTime)
+        taskViewModel.taskMeasurements.append(taskMeasurement)
     }
 }
 

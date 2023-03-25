@@ -22,6 +22,9 @@
 		178C1EE929CF362C00C4E37D /* TaskProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C1EE829CF362C00C4E37D /* TaskProgress.swift */; };
 		17A897C929CF592400312C28 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A897C829CF592400312C28 /* Constants.swift */; };
 		17A897CB29CF5ED800312C28 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A897CA29CF5ED800312C28 /* Extensions.swift */; };
+		17A897CD29CF66E500312C28 /* TaskMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A897CC29CF66E500312C28 /* TaskMeasurement.swift */; };
+		17A897CF29CF674800312C28 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A897CE29CF674800312C28 /* TaskViewModel.swift */; };
+		17A897D129CF81B000312C28 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A897D029CF81B000312C28 /* NewTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		178C1EE829CF362C00C4E37D /* TaskProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgress.swift; sourceTree = "<group>"; };
 		17A897C829CF592400312C28 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		17A897CA29CF5ED800312C28 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		17A897CC29CF66E500312C28 /* TaskMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMeasurement.swift; sourceTree = "<group>"; };
+		17A897CE29CF674800312C28 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		17A897D029CF81B000312C28 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,14 +119,17 @@
 			children = (
 				178C1EB329CF0D2C00C4E37D /* TaskTrackerWidgetApp.swift */,
 				178C1EB529CF0D2C00C4E37D /* ContentView.swift */,
+				17A897CE29CF674800312C28 /* TaskViewModel.swift */,
 				178C1EE029CF222000C4E37D /* DateNavigation.swift */,
 				178C1EE429CF22EA00C4E37D /* TaskList.swift */,
 				17A897CA29CF5ED800312C28 /* Extensions.swift */,
 				178C1EE229CF229300C4E37D /* TaskRow.swift */,
 				178C1EE629CF244000C4E37D /* TaskDetailView.swift */,
+				17A897D029CF81B000312C28 /* NewTaskView.swift */,
 				17A897C829CF592400312C28 /* Constants.swift */,
 				178C1EDE29CF1BB800C4E37D /* Task.swift */,
 				178C1EE829CF362C00C4E37D /* TaskProgress.swift */,
+				17A897CC29CF66E500312C28 /* TaskMeasurement.swift */,
 				178C1EB729CF0D2E00C4E37D /* Assets.xcassets */,
 				178C1EBC29CF0D2E00C4E37D /* TaskTrackerWidget.entitlements */,
 				178C1EB929CF0D2E00C4E37D /* Preview Content */,
@@ -284,11 +293,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				178C1EE729CF244000C4E37D /* TaskDetailView.swift in Sources */,
+				17A897CF29CF674800312C28 /* TaskViewModel.swift in Sources */,
 				178C1EE529CF22EA00C4E37D /* TaskList.swift in Sources */,
+				17A897CD29CF66E500312C28 /* TaskMeasurement.swift in Sources */,
 				178C1EE329CF229300C4E37D /* TaskRow.swift in Sources */,
 				178C1EB629CF0D2C00C4E37D /* ContentView.swift in Sources */,
 				178C1EE129CF222000C4E37D /* DateNavigation.swift in Sources */,
 				17A897CB29CF5ED800312C28 /* Extensions.swift in Sources */,
+				17A897D129CF81B000312C28 /* NewTaskView.swift in Sources */,
 				178C1EE929CF362C00C4E37D /* TaskProgress.swift in Sources */,
 				178C1EDF29CF1BB800C4E37D /* Task.swift in Sources */,
 				178C1EB429CF0D2C00C4E37D /* TaskTrackerWidgetApp.swift in Sources */,

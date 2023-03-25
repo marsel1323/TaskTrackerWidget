@@ -18,7 +18,7 @@ struct DateNavigation: View {
                 HStack {
                     Image(systemName: "arrow.left")
                         .font(.largeTitle)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color.primary)
                 }
                 .padding()
                 .background(Capsule().fill(Constants.buttonColor))
@@ -41,7 +41,7 @@ struct DateNavigation: View {
                 HStack {
                     Image(systemName: "arrow.right")
                         .font(.largeTitle)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color.primary)
                 }
                 .padding()
                 .background(Capsule().fill(Constants.buttonColor))

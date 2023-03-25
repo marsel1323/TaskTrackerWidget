@@ -12,6 +12,7 @@ struct TaskTrackerWidgetApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(TaskViewModel())
         }
     }
 }
