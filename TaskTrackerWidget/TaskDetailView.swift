@@ -18,7 +18,11 @@ struct TaskDetailView: View {
     init(task: Task, showDetail: Binding<Bool>) {
         self.task = task
         _showDetail = showDetail
-        _remainingTime = State(initialValue: task.timeGiven < 1500 ? task.timeGiven : 1500)
+        _remainingTime = State(
+            initialValue: task.timeGiven < Constants.maxTimeGiven
+                ? task.timeGiven
+                : Constants.maxTimeGiven
+        )
     }
 
     var body: some View {
@@ -75,7 +79,7 @@ struct BackButton: View {
             }
         }
         .padding()
-        .background(Capsule().fill(Color.blue))
+        .background(Capsule().fill(Constants.buttonColor))
         .buttonStyle(PlainButtonStyle())
         .padding(.leading)
         .padding(.top)
@@ -89,7 +93,7 @@ struct TaskNameText: View {
         Text(task.name)
             .font(.largeTitle)
             .padding()
-            .foregroundColor(Color.blue)
+            .foregroundColor(Constants.buttonColor)
     }
 }
 
@@ -99,7 +103,7 @@ struct RemainingTimeText: View {
     var body: some View {
         Text(formatTimeInterval(remainingTime))
             .font(.system(size: 60, weight: .bold, design: .rounded))
-            .foregroundColor(Color.blue)
+            .foregroundColor(Constants.buttonColor)
     }
     
     func formatTimeInterval(_ interval: TimeInterval) -> String {
@@ -122,7 +126,7 @@ struct TimerControlButton: View {
             Text(isRunning ? "Stop" : "Start")
                 .font(.title)
                 .padding()
-                .background(Capsule().fill(Color.blue))
+                .background(Capsule().fill(Constants.buttonColor))
                 .foregroundColor(.white)
         }
         .buttonStyle(PlainButtonStyle())

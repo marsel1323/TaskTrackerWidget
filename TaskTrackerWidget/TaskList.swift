@@ -19,8 +19,13 @@ struct TaskList: View {
                 ForEach(tasks) { task in
                     TaskRow(task: task, selectedTask: $selectedTask, showDetail: $showDetail, currentDate: $currentDate)
                 }
+//                .onDelete(perform: delete)
             }
             .padding(.bottom)
         }
     }
+    
+//    func delete(at offsets: IndexSet) {
+//        tasks.remove(atOffsets: offsets)
+//    }
 }

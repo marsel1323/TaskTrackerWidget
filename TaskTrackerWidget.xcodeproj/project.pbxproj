@@ -20,6 +20,7 @@
 		178C1EE529CF22EA00C4E37D /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C1EE429CF22EA00C4E37D /* TaskList.swift */; };
 		178C1EE729CF244000C4E37D /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C1EE629CF244000C4E37D /* TaskDetailView.swift */; };
 		178C1EE929CF362C00C4E37D /* TaskProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C1EE829CF362C00C4E37D /* TaskProgress.swift */; };
+		17A897C929CF592400312C28 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A897C829CF592400312C28 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		178C1EE429CF22EA00C4E37D /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 		178C1EE629CF244000C4E37D /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		178C1EE829CF362C00C4E37D /* TaskProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgress.swift; sourceTree = "<group>"; };
+		17A897C829CF592400312C28 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				178C1EE429CF22EA00C4E37D /* TaskList.swift */,
 				178C1EE229CF229300C4E37D /* TaskRow.swift */,
 				178C1EE629CF244000C4E37D /* TaskDetailView.swift */,
+				17A897C829CF592400312C28 /* Constants.swift */,
 				178C1EDE29CF1BB800C4E37D /* Task.swift */,
 				178C1EE829CF362C00C4E37D /* TaskProgress.swift */,
 				178C1EB729CF0D2E00C4E37D /* Assets.xcassets */,
@@ -285,6 +288,7 @@
 				178C1EE929CF362C00C4E37D /* TaskProgress.swift in Sources */,
 				178C1EDF29CF1BB800C4E37D /* Task.swift in Sources */,
 				178C1EB429CF0D2C00C4E37D /* TaskTrackerWidgetApp.swift in Sources */,
+				17A897C929CF592400312C28 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

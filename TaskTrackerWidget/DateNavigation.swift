@@ -21,7 +21,7 @@ struct DateNavigation: View {
                         .foregroundColor(.white)
                 }
                 .padding()
-                .background(Capsule().fill(Color.blue))
+                .background(Capsule().fill(Constants.buttonColor))
             }
             .contentShape(Rectangle())
             .buttonStyle(PlainButtonStyle())
@@ -44,7 +44,7 @@ struct DateNavigation: View {
                         .foregroundColor(.white)
                 }
                 .padding()
-                .background(Capsule().fill(Color.blue))
+                .background(Capsule().fill(Constants.buttonColor))
             }
             .contentShape(Rectangle())
             .buttonStyle(PlainButtonStyle())
