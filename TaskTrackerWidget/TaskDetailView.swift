@@ -100,18 +100,18 @@ struct TaskNameText: View {
 struct RemainingTimeText: View {
     @Binding var remainingTime: TimeInterval
     
-    var body: some View {
-        Text(formatTimeInterval(remainingTime))
-            .font(.system(size: 60, weight: .bold, design: .rounded))
-            .foregroundColor(Constants.buttonColor)
-    }
-    
-    func formatTimeInterval(_ interval: TimeInterval) -> String {
+    let formatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute, .second]
         formatter.unitsStyle = .positional
         formatter.zeroFormattingBehavior = .pad
-        return formatter.string(from: TimeInterval(interval)) ?? ""
+        return formatter
+    }()
+    
+    var body: some View {
+        Text(formatter.string(from: TimeInterval(remainingTime)) ?? "")
+            .font(.system(size: 60, weight: .bold, design: .rounded))
+            .foregroundColor(Constants.buttonColor)
     }
 }
 
@@ -147,17 +147,17 @@ struct TimerControlButton: View {
         if isRunning {
             timer?.invalidate()
         } else {
-            let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
                 if remainingTime > 0 {
                     remainingTime -= 1
                 } else {
                     playSound()
-                    self.timer?.invalidate()
+                    timer?.invalidate()
                     isRunning = false
                 }
             }
-            RunLoop.current.add(timer, forMode: .common)
-            self.timer = timer
+            //RunLoop.current.add(timer, forMode: .common)
+            //self.timer = timer
         }
         isRunning.toggle()
     }
@@ -170,13 +170,6 @@ struct TimerPicker: View {
         Binding(
             get: { Int(remainingTime / 60) },
             set: { newValue in remainingTime = TimeInterval(newValue * 60 + Int(remainingTime) % 60) }
-        )
-    }
-    
-    private var seconds: Binding<Int> {
-        Binding(
-            get: { Int(remainingTime) % 60 },
-            set: { newValue in remainingTime = TimeInterval(Int(remainingTime) / 60 * 60 + newValue) }
         )
     }
     
