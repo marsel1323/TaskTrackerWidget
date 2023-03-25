@@ -19,7 +19,7 @@ struct ContentView: View {
                 VStack {
                     DateNavigation(currentDate: $currentDate)
                     
-                    TaskList(tasks: tasks, selectedTask: $selectedTask, showDetail: $showDetail)
+                    TaskList(tasks: tasks, selectedTask: $selectedTask, showDetail: $showDetail, currentDate: $currentDate)
                         .padding(.top)
                 }
                 .padding()

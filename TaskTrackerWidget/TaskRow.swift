@@ -11,6 +11,9 @@ struct TaskRow: View {
     var task: Task
     @Binding var selectedTask: Task?
     @Binding var showDetail: Bool
+    @Binding var currentDate: Date
+    
+    // let taskProgress = getTaskProgressForCurrentDate(task: task)
     
     var body: some View {
         Button(action: {
@@ -45,4 +48,12 @@ struct TaskRow: View {
         formatter.zeroFormattingBehavior = .pad
         return formatter.string(from: TimeInterval(interval)) ?? ""
     }
+    
+//    func getTaskProgressForCurrentDate(task: Task) -> TaskProgress? {
+//        let currentDate = Calendar.current.startOfDay(for: currentDate)
+//        return task.progress.first { taskProgress in
+//            let taskProgressDay = Calendar.current.startOfDay(for: taskProgress.date)
+//            return currentDate == taskProgressDay
+//        }
+//    }
 }
